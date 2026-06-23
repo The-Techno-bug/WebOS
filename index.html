@@ -4,19 +4,28 @@
     <title>Vega</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel">
-    <script src="script.js"></script>
+    
 </head>
 <body>
-    <div id="welcome">
-        Welcome to Vega.
-    </div>
-    <div class="draggableWindow"></div>
     <div id="topbar">
         <h1><b>Vega</b></h1>
         <p id="timeElement">Time</p>
     </div>
+    <div id="welcomeWindow" class="window">
+        <div id="welcomeWindowheader" class="header">
+            <div id="interactButtons">
+                <div class="closeBtn" id="welcomeClose"></div>
+                <div class="minimizeBtn" id="welcomeMinimize"></div>
+                <div class="fullscreenBtn" id="welcomeOpen"></div>
+            </div>
+        <h3>Welcome</h3>
+        </div>
+        <div><p>Welcome to <span class="font">Vega.</span></p></div>
+    </div>
+
     <div>
         <h2>Hi!</h2>
-    </div> 
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    color: white;
 }
 
 div#topbar{
@@ -7,13 +8,14 @@ div#topbar{
     justify-content: space-between;
 }
 
-h1{
+h1,h2,h3{
     font-family: 'Cinzel', 'Times New Roman', Times, serif;
     color: white;
     text-shadow: 0 0 10px whitesmoke;
 }
 
-div#welcome{
+.font{
+    position: absolute;
     font-family: 'Cinzel', 'Times New Roman', Times, serif;
 }
 
@@ -21,12 +23,51 @@ p{
     color: white;
 }
 
+div.header{
+    background-color: rgb(50, 50, 50);
+    border-color: white;
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+#interactButtons{
+    display: flex;
+}
+
 div.window{
+    padding: 4px 4px 4px 4px;
     border: solid;
-    width: fit-content;
+    border-color: white;
+    width: 50%;
     border-radius: 8px;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%; 
+    left: 50%; 
     transform: translate(-50%,-50%);
+    user-select: none;
+    cursor: grab;
+}
+
+.closeBtn{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+
+.minimizeBtn{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: yellow;
+}
+
+.fullscreenBtn{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: green;
 }
