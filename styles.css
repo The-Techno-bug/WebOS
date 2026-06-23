@@ -1,0 +1,32 @@
+body{
+    background-color: black;
+}
+
+div#topbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+h1{
+    font-family: 'Cinzel', 'Times New Roman', Times, serif;
+    color: white;
+    text-shadow: 0 0 10px whitesmoke;
+}
+
+div#welcome{
+    font-family: 'Cinzel', 'Times New Roman', Times, serif;
+}
+
+p{
+    color: white;
+}
+
+div.window{
+    border: solid;
+    width: fit-content;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
