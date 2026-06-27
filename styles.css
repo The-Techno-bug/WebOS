@@ -11,6 +11,9 @@ div#topbar{
 h1,h2,h3{
     font-family: 'Cinzel', 'Times New Roman', Times, serif;
     color: white;
+}
+
+.glow{
     text-shadow: 0 0 10px whitesmoke;
 }
 
@@ -30,6 +33,7 @@ div.header{
     text-align: center;
     display: flex;
     justify-content: space-between;
+    cursor: grab;
 }
 
 #interactButtons{
@@ -47,7 +51,10 @@ div.window{
     left: 50%; 
     transform: translate(-50%,-50%);
     user-select: none;
-    cursor: grab;
+}
+
+.invisible{
+    display: none;
 }
 
 .closeBtn{
@@ -70,4 +77,28 @@ div.window{
     height: 20px;
     border-radius: 50%;
     background-color: green;
+}
+
+#desktop{
+    display: flex;
+}
+
+div.icon{
+    width: 128px;
+    height: 128px;
+    border-radius: 16px;
+    border-style: solid;
+    border-color: white;
+}
+
+div.icon:hover{
+    cursor: pointer;
+}
+
+div.selected{
+    background-color: rgb(30, 30, 30) !important;
+}
+
+.notes{
+    
 }

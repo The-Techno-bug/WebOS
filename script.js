@@ -1,7 +1,5 @@
 setInterval(function() {
-    document.querySelector("#timeElement").innerHTML = new Date().toLocaleString();},1000)
-
-dragElement(document.getElementById("welcomeWindow"));
+    document.querySelector("#timeElement").innerHTML = new Date().toLocaleString();},1000);
 
 function dragElement(element) {
     var initX = 0;
@@ -45,17 +43,76 @@ function dragElement(element) {
     }
 }
 
-var welcomeScreen = document.querySelector("#welcomeWindow")
-var welcomeScreenClose = document.querySelector("#welcomeClose")
-var welcomeScreenOpen = document.querySelector("#welcomeOpen")
+class desktopApp {
+    constructor(name,image) {
+        this.name = name;
+        this.image = image;
+        this.element = undefined;
+        this.show()
+        this.windowName = this.name + "Window"
+        this.closeName = this.name + "Close"
+    }
+    show(){
+        const desktop = document.getElementById("desktop");
+        const newDiv =`<div class="icon" id="${this.name}"><img src="${this.image}" alt="icon" height="128px" width="128px"></img></div>`;
+        desktop.insertAdjacentHTML('beforeend',newDiv);
+        this.element = document.getElementById(this.name);
+        this.element.addEventListener("click",() => {selectIcon(this);});
+    }
 
+    open() {
+        const windowElement = document.getElementById(this.windowName);
+        if (windowElement) {
+            openWindow(windowElement);
+            var closeScreen = document.querySelector(("#"+this.closeName))
+            closeScreen.addEventListener("click",() => this.close())
+            dragElement(windowElement)
+            windowElement.addEventListener("mousedown",() => handleWindowTap(windowElement))
+        }
+    }
+
+    close() {
+        const windowElement = document.getElementById(this.windowName);
+        if (windowElement) {
+            closeWindow(windowElement);
+        }
+    }
+}
+
+var selectedIcon = null;
+
+function selectIcon(app) {
+    if (selectedIcon === app) {
+        app.element.classList.remove("selected");
+        selectedIcon = null;
+        app.open();
+        return;
+    }
+
+    if (selectedIcon) {
+        selectedIcon.element.classList.remove("selected");
+    }
+
+    app.element.classList.add("selected");
+    selectedIcon = app;
+}
 function closeWindow(element) {
-    element.style.display = "none"
+    element.classList.add("invisible");
+    biggestIndex--;
 }
 
 function openWindow(element) {
-    element.style.display = "flex"
+    element.classList.remove("invisible");
+    biggestIndex++;
+    element.style.zIndex - biggestIndex;
 }
 
-welcomeScreenClose.addEventListener("click",function() {closeWindow(welcomeScreen);})
-welcomeScreenOpen.addEventListener("click",function() {openWindow(welcomeScreen);})
+function handleWindowTap(element) {
+    biggestIndex++;
+    element.style.zIndex = biggestIndex;
+}
+
+const app = new desktopApp("welcome", "./Images/star.png");
+const app2 = new desktopApp("notes", "./Images/star.png");
+
+var biggestIndex = 1

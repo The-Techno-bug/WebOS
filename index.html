@@ -8,23 +8,35 @@
 </head>
 <body>
     <div id="topbar">
-        <h1><b>Vega</b></h1>
+        <h1><b class="glow">Vega</b></h1>
         <p id="timeElement">Time</p>
     </div>
-    <div id="welcomeWindow" class="window">
+    <div id="desktop">
+        
+    </div>
+    <div id="welcomeWindow" class="window invisible">
         <div id="welcomeWindowheader" class="header">
             <div id="interactButtons">
                 <div class="closeBtn" id="welcomeClose"></div>
                 <div class="minimizeBtn" id="welcomeMinimize"></div>
-                <div class="fullscreenBtn" id="welcomeOpen"></div>
+                <div class="fullscreenBtn" id="welcomeFullscreen"></div>
             </div>
-        <h3>Welcome</h3>
+            <h3>Welcome</h3>
+            <h3></h3>
         </div>
         <div><p>Welcome to <span class="font">Vega.</span></p></div>
     </div>
-
-    <div>
-        <h2>Hi!</h2>
+    <div id="notesWindow" class="window invisible">
+        <div id="notesWindowheader" class="header">
+            <div id="interactButtons">
+                <div class="closeBtn" id="notesClose"></div>
+                <div class="minimizeBtn" id="notesMinimize"></div>
+                <div class="fullscreenBtn" id="notesFullscreen"></div>
+            </div>
+            <h3 class="glow">Notes</h3>
+            <h3></h3>
+        </div>
+        
     </div>
     <script src="script.js"></script>
 </body>
