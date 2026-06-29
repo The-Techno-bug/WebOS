@@ -1,5 +1,38 @@
-setInterval(function() {
-    document.querySelector("#timeElement").innerHTML = new Date().toLocaleString();},1000);
+setInterval(function() {document.querySelector("#timeElement").innerHTML = new Date().toLocaleString();},1000);
+document.querySelector("#dateElement").innerHTML = new Date().toDateString();
+
+sideBarTitle = document.querySelector("#sideBarTitle")
+topBarTitle = document.querySelector("#topBarTitle")
+
+function syncText(source,target) {
+    target.textContent = source.textContent;
+}
+
+sideBarTitle.addEventListener('keyup', ()=> syncText(sideBarTitle,topBarTitle))
+topBarTitle.addEventListener('keyup', ()=> syncText(topBarTitle,sideBarTitle))
+
+var content = [
+    {
+        title: "Welcome",
+        date: new Date().toDateString(),
+        selected: true,
+        content: ``
+    }
+]
+
+function addNote() {
+    content.forEach(element => { 
+        element.selected = false
+    });
+    content.concat({
+        title: "New Note",
+        date: new Date().toDateString(),
+        selected: true,
+        content: ``
+    })
+
+
+}
 
 function dragElement(element) {
     var initX = 0;
@@ -104,7 +137,7 @@ function closeWindow(element) {
 function openWindow(element) {
     element.classList.remove("invisible");
     biggestIndex++;
-    element.style.zIndex - biggestIndex;
+    element.style.zIndex = biggestIndex;
 }
 
 function handleWindowTap(element) {

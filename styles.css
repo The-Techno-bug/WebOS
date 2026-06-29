@@ -99,6 +99,61 @@ div.selected{
     background-color: rgb(30, 30, 30) !important;
 }
 
+.notesapp{
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+}
+
 .notes{
-    
+    width: 80%;
+}
+
+.sidebar{
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 12px;
+    width: 20%;
+    margin: 6px;
+    padding: 10px;
+    border: 2px white solid;
+    overflow-y: auto;
+}
+
+.sidebarItem{
+    border: 1px gray solid;
+    border-radius: 5px;
+    padding: 5px;
+    justify-items: center;
+}
+
+.selectedSidebarItem{
+    background-color: gray;
+    border-radius: 5px;
+    padding: 5px;
+    justify-items: center;
+}
+
+#dateElement{
+    font-size: 8px;
+}
+#dateElement,h4{
+    margin: 1px;
+}
+
+.topbar{
+    background-color: grey;
+    height: 10%;
+    border-radius: 2px;
+    justify-items: center;
+    padding: 10px;
+}
+
+#noteText{
+    border: 2px gray solid;
+    border-radius: 5px;
+    height:inherit;
+}
+.noteEditor{
+    height: 90%;
+    overflow-y: auto;
 }
